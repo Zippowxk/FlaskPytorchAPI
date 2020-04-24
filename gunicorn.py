@@ -1,0 +1,14 @@
+bind = '0.0.0.0:8080'
+workers = 1
+threads = 2
+backlog = 512
+timeout = 6000
+daemon = True
+chdir = '/www/wwwroot/p-leike'
+access_log_format = '%(t)s %(p)s %(h)s "%(r)s" %(s)s %(L)s %(b)s %(f)s" "%(a)s"'
+loglevel = 'info'
+worker_class = 'gevent'
+# worker_class = 'geventwebsocket.gunicorn.workers.GeventWebSocketWorker'
+errorlog = chdir + '/logs/error.log'
+accesslog = chdir + '/logs/access.log'
+pidfile = chdir + '/logs/plk.pid'
